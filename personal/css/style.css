@@ -1,0 +1,254 @@
+:root {
+    /* cores de fundos */
+    --bg-cor-escura: #0000000e;
+    --bg-cor-clara: #f0f0f0;
+
+    /* detalhes */
+    --cor-destaque: #133244;
+    --cor-destaque-2: #b846ba;
+
+    /* cor do texto */
+    --texto-cor-escura: #000000;
+    --texto-cor-clara: #ffffff;
+    --cor--clara: #f8fafc;
+    --cor--cinza--claro: #c7cace;
+
+    /* tipografia */
+    --fonte--padrao: Arial, Helvetica, sans-serif;
+    --fonte--menu-size: 16px;
+
+    /* espaçamentos */
+    --padding-padrao: 40px;
+    --padding--sessao: 80px;
+    --gap-padrao: 25px;
+    --padding-cartao: 25px;
+
+    /* bordas */
+    --borda-arredondada: 12px;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-cor-escura);
+    color: rgb(163, 164, 165);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #710b48;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    padding: 10px 15px;
+    gap: 20px;
+}
+
+.conteudo {
+    align-items: center;
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--texto-cor-escura);
+    display: block;
+    padding: 10px 12px;
+    z-index: 1000;
+
+}
+
+.menu li a:hover {
+    color: var(--cor-destaque);
+    font-weight: bold;
+    border-bottom: 1px solid var(--cor-destaque);
+}
+
+/* sections */
+.page-title {
+    background: linear-gradient(135deg, var(--bg-cor-escura), var(--cor-destaque));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--texto-cor-escura);
+}
+
+.page-title-full {
+    height: 100vh;
+}
+
+.page-title h1 {
+    font-size: 52px;
+
+}
+
+.page-title p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.sessao {
+    padding: var(--padding--sessao) var(--padding-padrao);
+    text-align: center;
+    background-color: var(--texto-cor-clara);
+}
+
+.destaque {
+    background-color: var(--cor--cinza--claro);
+}
+
+/* botoes */
+
+/* cartoes */
+.cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: var(--gap-padrao);
+}
+
+.cartao {
+    background-color: var(--cor--clara);
+    padding: var(--padding-cartao);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: var(--borda-arredondada);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* cartao serviço */
+.cartao-serv {
+    width: 300px;
+}
+
+/* cartao depoimento */
+.cartao-dep {
+    width: 350px;
+}
+
+.cartao-dep p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.cartao-dep strong {
+    font-size: 16px;
+    display: block;
+    color: var(--texto-cor-escura);
+}
+
+/* redes sociais */
+
+.sessao .subtitulo {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    color: var(--texto-cor-escura);
+    opacity: 0.8;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-padrao);
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.rede {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: var(--borda-arredondada);
+    background-color: var(--bg-cor-escura);
+    color: var(--texto-cor-escura);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rede i {
+    font-size: 18px;
+}
+
+.rede:hover {
+    transform: translateY(-3px);
+}
+
+.rede.instagram {
+    background-color: #e1306c;
+}
+
+.rede.instagram:hover {
+    background-color: #c72c60;
+}
+
+.rede.whatsapp {
+    background-color: #25d366;
+}
+
+.rede.whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+.rede.facebook {
+    background-color: #ce18f2;
+}
+
+.rede.facebook:hover {
+    background-color: #d116b8;
+}
+
+/* rodape */
+.footer {
+    width: 100%;
+    background-color: var(--bg-cor-escura);
+    color: var(--cor--clara);
+    text-align: center;
+    margin: 0;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.footer-logo {
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.footer-logo span {
+    color: var(--cor-destaque);
+}
+
+.footer-texto {
+    font-size: 14px;
+    opacity: 0.8;
+}
