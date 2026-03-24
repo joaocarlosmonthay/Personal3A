@@ -95,6 +95,10 @@ body {
 
 .page-title-full {
     height: 100vh;
+    background-image: url(/public/jc1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;    
 }
 
 .page-title h1 {

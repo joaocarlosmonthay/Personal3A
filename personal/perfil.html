@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Não parece na página, somente para título e conectar arquivos  -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PersonalPRO | Perfil</title>
+    <!-- Ligação com o ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- ligação com o arquivo css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<!-- Parte que vai aparecer na página  -->
+<!-- Parte que vai aparecer na página -->
+
+<body style="background-color: #f0f0f0;">
+    <main class="pg-container">
+        <nav class="menu" id="menu">
+            <!-- Divisão -->
+
+                
+            <div class="logo">
+                <p>Personal <span>Pro</span></p>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servico">Serviços</a></li>
+                <li><a href="#depoimento">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#">Entrar</a></li>
+            </ul>
+        </nav>
+<body>
+    <main class="pg-container">
+
+        <div class="conteudo">
+            <section class="sessao perfil-hero">
+                <div class="perfil-img">
+                    <img src="/public/perfil/personal3.jpg" alt="imagem do personal, ajudando aluno na academia"
+                        title="O personal Pro">
+                </div>
+
+                <div>
+                    <h2>Especialista em transformação física e alta performance</h2>
+                    <p>
+                        eu sou o douglas, personal trainer com mais de 8 anos de experiência, especializado em
+                        treinamento personalizado para resultados reais. Meu foco é transformar corpos e vidas através
+                        de métodos eficazes, planejamento estratégico e acompanhamento individualizado. Com uma
+                        abordagem centrada na saúde, disciplina e alta performance, ajudo meus alunos a alcançar seus
+                        objetivos de forma consistente e sustentável.
+                    </p>
+                </div>
+            </section>
+            <section class="sessao">
+                <h1>Sobre o profissional:</h1>
+
+            </section>
+            <section class="sessao">
+                <h2>Diferenciais</h2>
+                <div class="cartoes">
+                     
+                </div>
+            </section>
+            <section class="sessao">
+                <h1>Em ação</h1>
+                <div class="galeria">
+                    <img src="/public/perfil/personal1.jpg" alt="personal treinando aluno na academia"
+                        title="Treino personalizado para resultados reais">
+                    <img src="/public/perfil/personal2.jpg" alt="personal treinando aluno na academia"
+                        title="Treino personalizado para resultados reais">
+                    <img src="/public/perfil/personal4.jpg" alt="personal treinando aluno na academia"
+                        title="Treino personalizado para resultados reais">
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Botão do Agente Virtual -->
+    <div class="agente-virtual-btn" id="agenteBtn">
+        <i class="bi bi-chat-dots"></i>
+    </div>
+
+    <script>
+        // Função para detectar se é dispositivo móvel
+        function isMobile() {
+            return window.innerWidth <= 768 || 'ontouchstart' in window;
+        }
+
+
+        // Controle da barra de navegação (apenas para desktop)
+        if (!isMobile()) {
+            let lastScrollTop = 0;
+            const menu = document.querySelector('.menu');
+            const menuList = document.querySelector('.menu-list');
+
+            // Esconde/mostra menu baseado no scroll
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Rolando para baixo - esconde menu
+                    menuList.style.opacity = '0';
+                    menuList.style.pointerEvents = 'none';
+                } else {
+                    // Rolando para cima - mostra menu
+                    menuList.style.opacity = '1';
+                    menuList.style.pointerEvents = 'auto';
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+
+            // Mostra menu quando passar o mouse sobre qualquer parte do menu
+            menu.addEventListener('mouseenter', function () {
+                menuList.style.opacity = '1';
+                menuList.style.pointerEvents = 'auto';
+            });
+
+            // Mantém menu visível enquanto mouse estiver sobre ele
+            menuList.addEventListener('mouseenter', function () {
+                menuList.style.opacity = '1';
+                menuList.style.pointerEvents = 'auto';
+            });
+
+            // Esconde menu imediatamente quando mouse sair completamente da área do menu
+            menu.addEventListener('mouseleave', function (e) {
+                // Verifica se o mouse realmente saiu do menu (não está indo para o menu-list)
+                const relatedTarget = e.relatedTarget;
+                if (!menu.contains(relatedTarget)) {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    if (scrollTop > 100) {
+                        menuList.style.opacity = '0';
+                        menuList.style.pointerEvents = 'none';
+                    }
+                }
+            });
+
+            // Também monitora quando sai do menu-list
+            menuList.addEventListener('mouseleave', function (e) {
+                // Verifica se o mouse realmente saiu do menu-list (não está indo para o menu)
+                const relatedTarget = e.relatedTarget;
+                if (!menu.contains(relatedTarget)) {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    if (scrollTop > 100) {
+                        menuList.style.opacity = '0';
+                        menuList.style.pointerEvents = 'none';
+                    }
+                }
+            });
+        } else {
+            // No mobile, mostra sempre o menu inferior
+            const menuList = document.querySelector('.menu-list');
+            menuList.style.opacity = '1';
+            menuList.style.pointerEvents = 'auto';
+        }
+    </script>
+
+    <!-- Modal do Agente Virtual -->
+
+    <script>
+        // Dados das perguntas frequentes
+        const faqData = {
+            atendimento: [
+                {
+                    pergunta: "Como posso agendar uma consulta?",
+                    resposta: "Você pode agendar através do WhatsApp, Instagram ou preenchendo o formulário de contato no site. O atendimento é feito de segunda a sexta, das 8h às 18h."
+                },
+                {
+                    pergunta: "Qual é o horário de funcionamento?",
+                    resposta: "Atendo de segunda a sexta-feira, das 8h às 18h. Aos sábados, apenas por agendamento prévio para treinos presenciais."
+                },
+                {
+                    pergunta: "Como funciona o primeiro atendimento?",
+                    resposta: "O primeiro atendimento inclui uma avaliação física completa, anamnese detalhada e elaboração do plano de treinamento personalizado."
+                }
+            ],
+            servicos: [
+                {
+                    pergunta: "Qual a diferença entre treino individual e online?",
+                    resposta: "O treino individual é presencial na academia com acompanhamento direto. O online é feito remotamente via vídeo chamada, ideal para rotinas intensas."
+                },
+                {
+                    pergunta: "Quanto tempo dura cada sessão?",
+                    resposta: "As sessões têm duração média de 50 minutos, incluindo aquecimento, treino principal e alongamento final."
+                },
+                {
+                    pergunta: "Posso pausar ou cancelar meu plano?",
+                    resposta: "Sim, você pode pausar por até 30 dias ou cancelar com 7 dias de antecedência, sem multas."
+                }
+            ],
+            avaliacao: [
+                {
+                    pergunta: "O que inclui na avaliação física?",
+                    resposta: "Inclui medição de peso, altura, circunferências, análise de composição corporal, avaliação postural e testes de força."
+                },
+                {
+                    pergunta: "Com que frequência devo fazer reavaliação?",
+                    resposta: "Recomendo reavaliações a cada 3 meses para acompanhar o progresso e ajustar o treinamento conforme necessário."
+                },
+                {
+                    pergunta: "Preciso de exames médicos antes?",
+                    resposta: "Sim, é obrigatório apresentar atestado médico liberando para atividades físicas antes do início dos treinos."
+                }
+            ],
+            geral: [
+                {
+                    pergunta: "Qual é a sua formação?",
+                    resposta: "Sou Personal Trainer com mais de 8 anos de experiência, formado em Educação Física e com especializações em Treinamento Funcional e Musculação."
+                },
+                {
+                    pergunta: "Trabalha com todos os níveis?",
+                    resposta: "Sim, atendo desde iniciantes até atletas de alto rendimento, adaptando o treinamento conforme o nível e objetivos de cada pessoa."
+                },
+                {
+                    pergunta: "Como funciona o pagamento?",
+                    resposta: "Aceito cartão de crédito, débito, PIX e transferência bancária. Ofereço desconto para pagamentos à vista."
+                }
+            ]
+        };
+
+        // Elementos DOM
+        const agenteBtn = document.getElementById('agenteBtn');
+        const agenteModal = document.getElementById('agenteModal');
+        const agenteClose = document.getElementById('agenteClose');
+        const categoriaBtns = document.querySelectorAll('.agente-categoria-btn');
+        const perguntasContainer = document.getElementById('perguntasContainer');
+
+        // Função para abrir modal
+        agenteBtn.addEventListener('click', () => {
+            agenteModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            loadPerguntas('atendimento');
+        });
+
+        // Função para fechar modal
+        agenteClose.addEventListener('click', () => {
+            agenteModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fechar modal clicando fora
+        window.addEventListener('click', (e) => {
+            if (e.target === agenteModal) {
+                agenteModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Função para carregar perguntas
+        function loadPerguntas(categoria) {
+            const perguntas = faqData[categoria];
+            perguntasContainer.innerHTML = '';
+
+            perguntas.forEach(pergunta => {
+                const perguntaDiv = document.createElement('div');
+                perguntaDiv.className = 'agente-pergunta';
+                perguntaDiv.innerHTML = `
+                    <div class="agente-pergunta-header">
+                        <h4>${pergunta.pergunta}</h4>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="agente-pergunta-resposta">
+                        <p>${pergunta.resposta}</p>
+                    </div>
+                `;
+
+                // Toggle resposta
+                const header = perguntaDiv.querySelector('.agente-pergunta-header');
+                const resposta = perguntaDiv.querySelector('.agente-pergunta-resposta');
+                const icon = perguntaDiv.querySelector('i');
+
+                header.addEventListener('click', () => {
+                    resposta.classList.toggle('active');
+                    icon.classList.toggle('bi-chevron-down');
+                    icon.classList.toggle('bi-chevron-up');
+                });
+
+                perguntasContainer.appendChild(perguntaDiv);
+            });
+        }
+
+        // Event listeners para categorias
+        categoriaBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active de todos
+                categoriaBtns.forEach(b => b.classList.remove('active'));
+                // Adiciona active no clicado
+                btn.classList.add('active');
+                // Carrega perguntas da categoria
+                loadPerguntas(btn.dataset.categoria);
+            });
+        });
+    </script>
+<footer class="footer">
+        <p class="footer-logo">Personal<span>HUB</span></p>
+
+        <p class="footer-texto">
+            &copy 2026 PersonalPro • Todos os direitos reservados
+        </p>
+    </footer>
+</body>
+
+</html>
